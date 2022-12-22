@@ -15,10 +15,6 @@ contract SuperStaker {
     uint totalShares;
     mapping(address => uint) rEthMintedbyContract;
 
-    constructor(address _rocketStorageAddress) {
-        rocketStorage = RocketStorageInterface(_rocketStorageAddress);
-    }
-
     function vault_Deposit() public payable {
         require(msg.value > 1 gwei, "More than 0 pls");
         userShares[msg.sender] += msg.value;
@@ -70,4 +66,3 @@ contract SuperStaker {
 
 
 }
-
